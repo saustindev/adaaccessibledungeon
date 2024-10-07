@@ -1,0 +1,424 @@
+[gd_scene load_steps=36 format=3 uid="uid://bsg1bw2n83eh8"]
+
+[ext_resource type="Texture2D" uid="uid://btvuhr2gyvagu" path="res://elevatorbg.png" id="1_7bb71"]
+[ext_resource type="Texture2D" uid="uid://dxlkphm8prjyo" path="res://bgs/full.png" id="1_lvxl2"]
+[ext_resource type="Texture2D" uid="uid://do3kti2vwih5x" path="res://enemies/placeholder0.png" id="1_sf4ou"]
+[ext_resource type="Texture2D" uid="uid://cndohnyoqji5y" path="res://doorl.png" id="1_u6hf0"]
+[ext_resource type="Script" path="res://doormanager.gd" id="1_xxtgd"]
+[ext_resource type="Texture2D" uid="uid://2tqfl2s6vf74" path="res://doorr.png" id="2_s0xt6"]
+[ext_resource type="Script" path="res://elevatorgod.gd" id="4_u1hml"]
+[ext_resource type="Script" path="res://elevatorbutton.gd" id="5_0hmn5"]
+[ext_resource type="AudioStream" uid="uid://bvseu8nyx123f" path="res://elevatording2.ogg" id="5_007qe"]
+[ext_resource type="Texture2D" uid="uid://b0unv252reok1" path="res://buttonpressed.png" id="7_sdbop"]
+[ext_resource type="Script" path="res://animatedtext.gd" id="9_3ey5n"]
+[ext_resource type="Script" path="res://singleton.gd" id="9_83f7d"]
+[ext_resource type="Script" path="res://enemylibrary.gd" id="10_ct6um"]
+[ext_resource type="Script" path="res://floormanager.gd" id="11_b8s2f"]
+[ext_resource type="Texture2D" uid="uid://d0tcs06ghtdko" path="res://scrolltitle.png" id="11_qeeye"]
+[ext_resource type="Script" path="res://playerchoicebutton.gd" id="12_bsqdw"]
+[ext_resource type="Script" path="res://floornum.gd" id="12_dgwl1"]
+[ext_resource type="Script" path="res://turnnum.gd" id="13_w5oab"]
+[ext_resource type="Script" path="res://playerstate.gd" id="14_6gajn"]
+[ext_resource type="AudioStream" uid="uid://coh2kn0y3as7w" path="res://elevator_retro_cut.ogg" id="17_kao2t"]
+[ext_resource type="AudioStream" uid="uid://cnb8yb14snoqw" path="res://Ogg/Cursor_tones/cursor_style_2.ogg" id="18_8ovib"]
+[ext_resource type="AudioStream" uid="uid://blywyaw5tg7qb" path="res://Ogg/Back_tones/style5/back_style_5_001.ogg" id="19_s35t0"]
+[ext_resource type="Texture2D" uid="uid://l2506qg6ca1p" path="res://player/heartbeat.png" id="20_kpxwg"]
+[ext_resource type="Texture2D" uid="uid://d1sbpykofmbqu" path="res://player/livereaction.png" id="21_ublmt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv6mm"]
+atlas = ExtResource("20_kpxwg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5aut4"]
+atlas = ExtResource("20_kpxwg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_625e2"]
+atlas = ExtResource("20_kpxwg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw3j5"]
+atlas = ExtResource("20_kpxwg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24ue8"]
+atlas = ExtResource("20_kpxwg")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b53s7"]
+atlas = ExtResource("20_kpxwg")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jovld"]
+atlas = ExtResource("20_kpxwg")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3t8f"]
+atlas = ExtResource("20_kpxwg")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4ey6"]
+atlas = ExtResource("20_kpxwg")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntang"]
+atlas = ExtResource("20_kpxwg")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k737g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv6mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5aut4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_625e2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw3j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24ue8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b53s7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jovld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3t8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4ey6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntang")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="GameView" type="Node2D"]
+
+[node name="farbg" type="Sprite2D" parent="."]
+position = Vector2(802, 667)
+scale = Vector2(1.3, 1.1)
+texture = ExtResource("1_lvxl2")
+
+[node name="enemysprite" type="Sprite2D" parent="."]
+position = Vector2(813, 619)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_sf4ou")
+
+[node name="doormanager" type="Node2D" parent="."]
+script = ExtResource("1_xxtgd")
+
+[node name="ldoor" type="Sprite2D" parent="doormanager"]
+position = Vector2(518, 660)
+scale = Vector2(1, 1.05)
+texture = ExtResource("1_u6hf0")
+
+[node name="rdoor" type="Sprite2D" parent="doormanager"]
+position = Vector2(1070, 660)
+scale = Vector2(1, 1.05)
+texture = ExtResource("2_s0xt6")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_7bb71")
+
+[node name="elevatorgod" type="Node2D" parent="."]
+position = Vector2(1535, 404)
+script = ExtResource("4_u1hml")
+
+[node name="ding" type="AudioStreamPlayer2D" parent="elevatorgod"]
+stream = ExtResource("5_007qe")
+
+[node name="Button1" type="Button" parent="elevatorgod"]
+offset_left = -132.0
+offset_top = -120.0
+offset_right = -117.0
+offset_bottom = -104.0
+theme_override_font_sizes/font_size = 5
+text = "1"
+script = ExtResource("5_0hmn5")
+
+[node name="pressed" type="Sprite2D" parent="elevatorgod/Button1"]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("7_sdbop")
+
+[node name="Button2" type="Button" parent="elevatorgod"]
+offset_left = -104.0
+offset_top = -120.0
+offset_right = -89.0
+offset_bottom = -104.0
+theme_override_font_sizes/font_size = 5
+text = "1"
+script = ExtResource("5_0hmn5")
+
+[node name="pressed" type="Sprite2D" parent="elevatorgod/Button2"]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("7_sdbop")
+
+[node name="Button3" type="Button" parent="elevatorgod"]
+offset_left = -75.0
+offset_top = -120.0
+offset_right = -60.0
+offset_bottom = -104.0
+theme_override_font_sizes/font_size = 5
+text = "1"
+script = ExtResource("5_0hmn5")
+
+[node name="pressed" type="Sprite2D" parent="elevatorgod/Button3"]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("7_sdbop")
+
+[node name="Button4" type="Button" parent="elevatorgod"]
+offset_left = -44.0
+offset_top = -120.0
+offset_right = -29.0
+offset_bottom = -104.0
+theme_override_font_sizes/font_size = 5
+text = "1"
+script = ExtResource("5_0hmn5")
+
+[node name="pressed" type="Sprite2D" parent="elevatorgod/Button4"]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("7_sdbop")
+
+[node name="Button5" type="Button" parent="elevatorgod"]
+offset_left = -14.0
+offset_top = -120.0
+offset_right = 1.0
+offset_bottom = -104.0
+theme_override_font_sizes/font_size = 5
+text = "1"
+script = ExtResource("5_0hmn5")
+
+[node name="pressed" type="Sprite2D" parent="elevatorgod/Button5"]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("7_sdbop")
+
+[node name="Button6" type="Button" parent="elevatorgod"]
+offset_left = 15.0
+offset_top = -120.0
+offset_right = 30.0
+offset_bottom = -104.0
+theme_override_font_sizes/font_size = 5
+text = "1"
+script = ExtResource("5_0hmn5")
+
+[node name="pressed" type="Sprite2D" parent="elevatorgod/Button6"]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("7_sdbop")
+
+[node name="Button7" type="Button" parent="elevatorgod"]
+offset_left = 46.0
+offset_top = -120.0
+offset_right = 61.0
+offset_bottom = -104.0
+theme_override_font_sizes/font_size = 5
+text = "1"
+script = ExtResource("5_0hmn5")
+
+[node name="pressed" type="Sprite2D" parent="elevatorgod/Button7"]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("7_sdbop")
+
+[node name="Button8" type="Button" parent="elevatorgod"]
+offset_left = 75.0
+offset_top = -120.0
+offset_right = 90.0
+offset_bottom = -104.0
+theme_override_font_sizes/font_size = 5
+text = "1"
+script = ExtResource("5_0hmn5")
+
+[node name="pressed" type="Sprite2D" parent="elevatorgod/Button8"]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("7_sdbop")
+
+[node name="Button9" type="Button" parent="elevatorgod"]
+offset_left = 104.0
+offset_top = -120.0
+offset_right = 119.0
+offset_bottom = -104.0
+theme_override_font_sizes/font_size = 5
+text = "1"
+script = ExtResource("5_0hmn5")
+
+[node name="pressed" type="Sprite2D" parent="elevatorgod/Button9"]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("7_sdbop")
+
+[node name="Button10" type="Button" parent="elevatorgod"]
+offset_left = -132.0
+offset_top = -89.0
+offset_right = -117.0
+offset_bottom = -73.0
+theme_override_font_sizes/font_size = 5
+text = "1"
+script = ExtResource("5_0hmn5")
+
+[node name="pressed" type="Sprite2D" parent="elevatorgod/Button10"]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("7_sdbop")
+
+[node name="messageboxparent" type="Node2D" parent="."]
+position = Vector2(139, 67)
+
+[node name="messagebox" type="Sprite2D" parent="messageboxparent"]
+position = Vector2(640, 848)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_qeeye")
+
+[node name="text" type="Label" parent="messageboxparent"]
+offset_left = 140.0
+offset_top = 786.0
+offset_right = 580.0
+offset_bottom = 894.0
+theme_override_colors/font_color = Color(0.389813, 0.246246, 0.0338321, 1)
+theme_override_font_sizes/font_size = 24
+text = "Welcome to the dungeon."
+script = ExtResource("9_3ey5n")
+
+[node name="singleton" type="Node2D" parent="."]
+script = ExtResource("9_83f7d")
+
+[node name="enemylibrary" type="Node2D" parent="singleton"]
+script = ExtResource("10_ct6um")
+
+[node name="floormanager" type="Node2D" parent="singleton"]
+script = ExtResource("11_b8s2f")
+
+[node name="playerstate" type="Node2D" parent="singleton"]
+script = ExtResource("14_6gajn")
+
+[node name="playerui" type="Node2D" parent="."]
+
+[node name="guardbutton" type="Button" parent="playerui"]
+offset_top = 107.0
+offset_right = 300.0
+offset_bottom = 207.0
+theme_override_font_sizes/font_size = 30
+text = "Guard"
+script = ExtResource("12_bsqdw")
+actionid = 1
+
+[node name="closebutton" type="Button" parent="playerui"]
+offset_left = 1051.0
+offset_top = 107.0
+offset_right = 1351.0
+offset_bottom = 207.0
+theme_override_font_sizes/font_size = 30
+text = "Close Door"
+script = ExtResource("12_bsqdw")
+actionid = 3
+
+[node name="attackbutton" type="Button" parent="playerui"]
+offset_top = 3.0
+offset_right = 300.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 30
+text = "Attack"
+script = ExtResource("12_bsqdw")
+
+[node name="openbutton" type="Button" parent="playerui"]
+offset_left = 1052.0
+offset_top = 3.0
+offset_right = 1352.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 30
+text = "Open Door"
+script = ExtResource("12_bsqdw")
+actionid = 2
+
+[node name="floornum" type="Label" parent="playerui"]
+offset_left = 774.0
+offset_top = 216.0
+offset_right = 814.0
+offset_bottom = 239.0
+text = "G"
+horizontal_alignment = 1
+script = ExtResource("12_dgwl1")
+
+[node name="turnnum" type="Label" parent="playerui"]
+offset_left = 1837.0
+offset_top = 2.0
+offset_right = 1887.0
+offset_bottom = 25.0
+text = "Turn 0"
+script = ExtResource("13_w5oab")
+
+[node name="heartrate" type="Label" parent="playerui"]
+offset_left = 1786.0
+offset_top = 237.0
+offset_right = 1870.0
+offset_bottom = 261.0
+theme_override_font_sizes/font_size = 30
+text = "50 bpm"
+
+[node name="heartbeat" type="AnimatedSprite2D" parent="playerui"]
+position = Vector2(1821, 306)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_k737g")
+autoplay = "default"
+frame = 3
+frame_progress = 0.997842
+
+[node name="livereactionbg" type="Sprite2D" parent="playerui"]
+position = Vector2(1821, 130)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("21_ublmt")
+
+[node name="livereaction" type="Label" parent="playerui"]
+offset_left = 1757.0
+offset_top = 45.0
+offset_right = 1900.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "LIVE REACTION"
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_kao2t")
+autoplay = true
+parameters/looping = true
+
+[node name="sfx" type="Node2D" parent="."]
+
+[node name="textbeep" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("18_8ovib")
+volume_db = -1.515
+
+[node name="buttonpressed" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("19_s35t0")
+
+[connection signal="pressed" from="elevatorgod/Button1" to="elevatorgod/Button1" method="_on_pressed"]
+[connection signal="pressed" from="elevatorgod/Button2" to="elevatorgod/Button2" method="_on_pressed"]
+[connection signal="pressed" from="elevatorgod/Button3" to="elevatorgod/Button3" method="_on_pressed"]
+[connection signal="pressed" from="elevatorgod/Button4" to="elevatorgod/Button4" method="_on_pressed"]
+[connection signal="pressed" from="elevatorgod/Button5" to="elevatorgod/Button5" method="_on_pressed"]
+[connection signal="pressed" from="elevatorgod/Button6" to="elevatorgod/Button6" method="_on_pressed"]
+[connection signal="pressed" from="elevatorgod/Button7" to="elevatorgod/Button7" method="_on_pressed"]
+[connection signal="pressed" from="elevatorgod/Button8" to="elevatorgod/Button8" method="_on_pressed"]
+[connection signal="pressed" from="elevatorgod/Button9" to="elevatorgod/Button9" method="_on_pressed"]
+[connection signal="pressed" from="elevatorgod/Button10" to="elevatorgod/Button10" method="_on_pressed"]
+[connection signal="pressed" from="playerui/guardbutton" to="playerui/guardbutton" method="_on_pressed"]
+[connection signal="pressed" from="playerui/closebutton" to="playerui/closebutton" method="_on_pressed"]
+[connection signal="pressed" from="playerui/attackbutton" to="playerui/attackbutton" method="_on_pressed"]
+[connection signal="pressed" from="playerui/openbutton" to="playerui/openbutton" method="_on_pressed"]

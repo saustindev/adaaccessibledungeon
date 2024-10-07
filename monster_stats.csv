@@ -1,0 +1,10 @@
+Zombie,10,10,5,50,25,0.3,zombie,0.3,0,0
+Slime,10,5,1,100,25,0.1,slime,0.4,0,0
+Wolf Granny,20,10,5,50,25,0.5,wolfgranny,0.4,1,2
+Missing Texture,15,15,15,75,13,0.1,placeholder,0.7,0,0
+Buff Zombie,15,15,10,75,25,0.4,pzombie,0.6,0,0
+Buff Slime,20,5,1,150,25,0.2,pslime,0.8,0,0
+Skeleton,15,10,5,40,0,0.3,skeleton,0.5,1,1
+Buff Skeleton,20,15,5,60,0,0.3,dskeleton,0.8,1,1
+Red Mage,20,5,15,60,0,0.3,placeholder,1,1,3
+Evil Wizard Trober,40,20,20,300,25,1,placeholder,0,1,3

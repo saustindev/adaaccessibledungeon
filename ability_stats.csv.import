@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://blx3atxnfh2d"
+
+[deps]
+
+files=["res://ability_stats.defaultattack.translation", "res://ability_stats.2.translation", "res://ability_stats.10.translation", "res://ability_stats.The $ attacks!.translation", "res://ability_stats.0.translation"]
+
+source_file="res://ability_stats.csv"
+dest_files=["res://ability_stats.defaultattack.translation", "res://ability_stats.2.translation", "res://ability_stats.10.translation", "res://ability_stats.The $ attacks!.translation", "res://ability_stats.0.translation"]
+
+[params]
+
+compress=true
+delimiter=0

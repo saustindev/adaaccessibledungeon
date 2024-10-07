@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b7iq7ss8xaqj"
+
+[deps]
+
+files=["res://monster_stats_old.10.translation", "res://monster_stats_old.10.translation", "res://monster_stats_old.5.translation", "res://monster_stats_old.50.translation", "res://monster_stats_old.25.translation", "res://monster_stats_old.0.3.translation", "res://monster_stats_old.zombie.translation"]
+
+source_file="res://monster_stats_old.csv"
+dest_files=["res://monster_stats_old.10.translation", "res://monster_stats_old.10.translation", "res://monster_stats_old.5.translation", "res://monster_stats_old.50.translation", "res://monster_stats_old.25.translation", "res://monster_stats_old.0.3.translation", "res://monster_stats_old.zombie.translation"]
+
+[params]
+
+compress=true
+delimiter=0

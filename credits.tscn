@@ -1,0 +1,289 @@
+[gd_scene load_steps=6 format=3 uid="uid://3m361mt72xey"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_g852a"]
+[ext_resource type="Texture2D" uid="uid://d0tcs06ghtdko" path="res://scrolltitle.png" id="2_dk764"]
+[ext_resource type="Texture2D" uid="uid://4ktdn2q5m8yd" path="res://enemies/zombie0.png" id="3_14q1s"]
+[ext_resource type="Texture2D" uid="uid://ca1bpadn15f87" path="res://player/stress0.png" id="4_c1qa4"]
+[ext_resource type="AudioStream" uid="uid://bwd4u4nexh8iv" path="res://elevator_credits.ogg" id="5_8k6bd"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_g852a")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D"]
+stream = ExtResource("5_8k6bd")
+autoplay = true
+max_distance = 999999.0
+attenuation = 0.000410594
+
+[node name="ColorRect" type="ColorRect" parent="Node2D"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(0, 0)
+layout_direction = 0
+layout_mode = 3
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1920.0
+offset_bottom = 6000.0
+grow_horizontal = 1
+grow_vertical = 1
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+mouse_filter = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+color = Color(0.122252, 0.122252, 0.122252, 1)
+script = null
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(952, 164)
+texture = ExtResource("2_dk764")
+
+[node name="Label" type="Label" parent="Node2D/Sprite2D"]
+offset_left = -108.0
+offset_top = -54.0
+offset_right = 113.0
+offset_bottom = 3.0
+theme_override_colors/font_color = Color(0.2992, 0.20256, 0.0281992, 1)
+theme_override_font_sizes/font_size = 72
+text = "Credits"
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = 658.0
+offset_top = 338.0
+offset_right = 1361.0
+offset_bottom = 775.0
+theme_override_font_sizes/font_size = 50
+text = "ADA Accessible Dungeon
+
+
+
+Made for Interstellar Game Jam 7
+
+3 - 7 Oct, 2024
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+position = Vector2(424, 1020)
+texture = ExtResource("3_14q1s")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+position = Vector2(1540, 1820)
+scale = Vector2(2, 2)
+texture = ExtResource("4_c1qa4")
+
+[node name="credititem" type="Node2D" parent="Node2D"]
+position = Vector2(946, 305)
+
+[node name="Label2" type="Label" parent="Node2D/credititem"]
+offset_left = -73.0
+offset_top = 608.0
+offset_right = 148.0
+offset_bottom = 665.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 72
+text = "Art (good)"
+
+[node name="Label" type="Label" parent="Node2D/credititem"]
+offset_left = -34.0
+offset_top = 809.0
+offset_right = 210.0
+offset_bottom = 850.0
+theme_override_font_sizes/font_size = 50
+text = "Snails_alife"
+
+[node name="credititem3" type="Node2D" parent="Node2D"]
+position = Vector2(934, 1613)
+
+[node name="Label2" type="Label" parent="Node2D/credititem3"]
+offset_left = -136.0
+offset_top = 618.0
+offset_right = 319.0
+offset_bottom = 675.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 72
+text = "Programming"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Node2D/credititem3"]
+offset_left = -145.0
+offset_top = 757.0
+offset_right = 349.0
+offset_bottom = 886.0
+theme_override_font_sizes/font_size = 50
+text = "Made with Godot Engine
+
+saustingames"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Node2D"]
+offset_left = 267.0
+offset_top = 5633.0
+offset_right = 1698.0
+offset_bottom = 5747.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 144
+text = "Thank  you for playing!"
+horizontal_alignment = 1
+
+[node name="credititem4" type="Node2D" parent="Node2D"]
+position = Vector2(924, 2353)
+
+[node name="Label2" type="Label" parent="Node2D/credititem4"]
+offset_left = -136.0
+offset_top = 618.0
+offset_right = 319.0
+offset_bottom = 675.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 72
+text = "Music"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Node2D/credititem4"]
+offset_left = -145.0
+offset_top = 757.0
+offset_right = 349.0
+offset_bottom = 886.0
+theme_override_font_sizes/font_size = 50
+text = "saustingames"
+horizontal_alignment = 1
+
+[node name="credititem6" type="Node2D" parent="Node2D"]
+position = Vector2(903, 4621)
+
+[node name="Label2" type="Label" parent="Node2D/credititem6"]
+offset_left = -136.0
+offset_top = 618.0
+offset_right = 319.0
+offset_bottom = 675.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 72
+text = "Special Thanks"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Node2D/credititem6"]
+offset_left = -145.0
+offset_top = 757.0
+offset_right = 349.0
+offset_bottom = 886.0
+theme_override_font_sizes/font_size = 50
+text = "You :)"
+horizontal_alignment = 1
+
+[node name="credititem5" type="Node2D" parent="Node2D"]
+position = Vector2(924, 2880)
+
+[node name="Label2" type="Label" parent="Node2D/credititem5"]
+offset_left = -136.0
+offset_top = 618.0
+offset_right = 319.0
+offset_bottom = 675.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 72
+text = "Assets Used"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Node2D/credititem5"]
+offset_left = -668.0
+offset_top = 778.0
+offset_right = 826.0
+offset_bottom = 1549.0
+theme_override_font_sizes/font_size = 50
+text = "Font
+
+BitFantasy by Nimble Beasts Collective (CC0)
+https://nimblebeastscollective.itch.io/nb-pixel-font-bundle
+
+
+Soundfont
+
+Lil'Sness 
+(Link no longer works)
+
+
+Attack Animation
+
+CC-BY 4.0
+Viktor Hahn (Viktor.Hahn@web.de)
+https://opengameart.org/content/more-pixelated-attackhit-animations
+
+Attack Sound
+
+37 Hits/Punches by Independent.nu (CC0)
+https://opengameart.org/content/37-hitspunches
+
+UI Sound
+
+Pack by Obsydianx (CC0)
+https://obsydianx.itch.io/interface-sfx-pack-1"
+horizontal_alignment = 1
+
+[node name="credititem2" type="Node2D" parent="Node2D"]
+position = Vector2(943, 942)
+
+[node name="Label2" type="Label" parent="Node2D/credititem2"]
+offset_left = -136.0
+offset_top = 618.0
+offset_right = 319.0
+offset_bottom = 675.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 72
+text = "Art (less good)"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Node2D/credititem2"]
+offset_left = -37.0
+offset_top = 794.0
+offset_right = 238.0
+offset_bottom = 835.0
+theme_override_font_sizes/font_size = 50
+text = "saustingames"

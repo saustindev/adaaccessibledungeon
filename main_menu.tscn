@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://rgj6rrqmti7f"]
+
+[ext_resource type="Texture2D" uid="uid://cq071tachg3eu" path="res://mainmenubg.png" id="1_vop3h"]
+[ext_resource type="Texture2D" uid="uid://d0tcs06ghtdko" path="res://scrolltitle.png" id="2_b3kb7"]
+[ext_resource type="Script" path="res://mainmenubutton.gd" id="3_v0jkr"]
+[ext_resource type="AudioStream" uid="uid://bt6c4jdyon6l2" path="res://outside_the_tower_retro.ogg" id="4_64cof"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_vop3h")
+
+[node name="titlebg" type="Sprite2D" parent="."]
+position = Vector2(1025, 158)
+scale = Vector2(0.7, 1)
+texture = ExtResource("2_b3kb7")
+region_rect = Rect2(769, 65, 47, 47)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 826.0
+offset_top = 118.0
+offset_right = 1249.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(0.540902, 0.390973, 0.0358598, 1)
+theme_override_font_sizes/font_size = 42
+text = "ADA Accessible Dungeon"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 862.0
+offset_top = 363.0
+offset_right = 1162.0
+offset_bottom = 463.0
+theme_override_font_sizes/font_size = 32
+text = "Start"
+script = ExtResource("3_v0jkr")
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_64cof")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
